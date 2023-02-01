@@ -1,5 +1,7 @@
-const prompt = require(`prompt-sync`)({signt: true});
+const prompt = require('prompt-sync')();
 
-let cN = Number(prompt(`How many sides would you like your dice to have? `));
+let x = Number(prompt(`How many sides for the dice? `));
 
-console.log(Math.ceil(Math.random()*cN));
+x = Math.ceil(Math.random() * x);
+
+console.log(x);

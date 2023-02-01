@@ -1,13 +1,18 @@
-const prompt = require(`prompt-sync`)({signt: true});
+const prompt = require('prompt-sync')();
 
-let userNumber = Number(prompt(`What is your favorite number? `));
-let roll = Math.ceil(Math.random()*7);
+let x = Number(prompt(`Submit a number 1 - 6 : `));
 
-console.log(`*Rolls Dice*`);
-console.log(`Actual roll: ${roll}`);
+let y = Math.ceil(Math.random()*6)
 
-if(roll === 7){
-    console.log(userNumber);
+while(x < 1 || x > 6 || isNaN(x)){
+    x = Number(prompt(`Submit a number 1 - 6 : `));
+}
+
+console.log(`Rolls...`);
+
+if(y !== x){
+    y = Math.ceil(Math.random()*6)
+    console.log(y);
 }else{
-    console.log(roll);
+    console.log(y);
 }
